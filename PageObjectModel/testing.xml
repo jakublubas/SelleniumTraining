@@ -1,0 +1,11 @@
+<suite name="Any Name" >
+        <test name="Any Name" >
+            <classes>
+                <class name="automationFramework.TestNG"/>
+                <class name="automationFramework.Apache_POI_TC"/>
+                <class name="automationFramework.Module_TC"/>
+                <class name="automationFramework.Global_Var_TC"/>
+                <class name="automationFramework.POM_TC"/>
+            </classes>
+        </test>
+</suite>

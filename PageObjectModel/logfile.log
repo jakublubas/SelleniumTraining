@@ -40,4 +40,28 @@
 2017-07-12 13:09:09,034 INFO  [Log] X 
 2017-07-12 13:09:09,034 INFO  [Log] X 
 2017-07-12 13:09:09,034 INFO  [Log] X 
-2017-07-12 13:09:09,034 INFO  [Log] X 
+2017-07-12 13:09:09,034 INFO  [Log] X 2017-07-12 13:34:07,653 INFO  [Log] **************************************************************************************** 
+2017-07-12 13:34:07,653 INFO  [Log] **************************************************************************************** 
+2017-07-12 13:34:07,653 INFO  [Log] $$$$$$$$$$$$$$$$$$$$$                 Selenium_Test_001       $$$$$$$$$$$$$$$$$$$$$$$$$ 
+2017-07-12 13:34:07,653 INFO  [Log] **************************************************************************************** 
+2017-07-12 13:34:07,653 INFO  [Log] **************************************************************************************** 
+2017-07-12 13:34:08,756 INFO  [Log] Excel sheet opened 
+2017-07-12 13:34:14,101 INFO  [Log] New driver instantiated 
+2017-07-12 13:34:14,112 INFO  [Log] Implicit wait applied on the driver for 10 seconds 
+2017-07-12 13:34:29,393 INFO  [Log] Web application launched 
+2017-07-12 13:34:29,403 INFO  [Log] Username picked from Excel is Testuser_1 
+2017-07-12 13:34:29,403 INFO  [Log] Password picked from Excel is Test@123 
+2017-07-12 13:34:29,446 INFO  [Log] My Account link element found 
+2017-07-12 13:34:31,279 INFO  [Log] Click action performed on My Account link 
+2017-07-12 13:34:31,318 INFO  [Log] Username text box found 
+2017-07-12 13:34:31,437 INFO  [Log] Username entered in the Username text box 
+2017-07-12 13:34:31,481 INFO  [Log] Password text box found 
+2017-07-12 13:34:31,612 INFO  [Log] Password entered in the Password text box 
+2017-07-12 13:34:31,644 INFO  [Log] Submit button found 
+2017-07-12 13:34:31,733 INFO  [Log] Click action performed on Submit button 
+2017-07-12 13:34:33,073 INFO  [Log] Browser closed 
+2017-07-12 13:34:33,303 INFO  [Log] XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX 
+2017-07-12 13:34:33,303 INFO  [Log] X 
+2017-07-12 13:34:33,303 INFO  [Log] X 
+2017-07-12 13:34:33,303 INFO  [Log] X 
+2017-07-12 13:34:33,303 INFO  [Log] X 
