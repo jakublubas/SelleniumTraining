@@ -4,6 +4,7 @@ import appModule.SignIn_Action;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjects.HomePage;
+import utility.Constant;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,9 +23,9 @@ public class Global_Var_TC {
         System.setProperty("webdriver.chrome.driver", exePath);
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(URL);
+        driver.get(Constant.URL);
 
-        SignIn_Action.Execute(driver,Username,Password);
+        //SignIn_Action.Execute(driver,Username,Password);
         System.out.println("Login Successfully!");
 
         HomePage.lnk_LogOut(driver).click();

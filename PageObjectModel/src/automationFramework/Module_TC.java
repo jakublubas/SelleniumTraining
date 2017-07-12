@@ -21,7 +21,7 @@ public class Module_TC {
         driver.get("http://www.store.demoqa.com");
 
 
-        SignIn_Action.Execute(driver,"TestUser_2", "TestPassword");
+        //SignIn_Action.Execute(driver,"TestUser_2", "TestPassword");
         HomePage.lnk_LogOut(driver).click();
         System.out.println("Login Succesfully");
 
