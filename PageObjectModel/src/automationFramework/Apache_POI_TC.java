@@ -26,7 +26,7 @@ public class Apache_POI_TC {
 
         //This is to open the Excel file. Excel path, file name and the sheet name are parameters to this method
 
-        ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Sheet1");
+       // ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"Sheet1");
 
         //ChromeDriver
         String exePath = "C:\\Users\\int_jalu.MOBICAPL\\Selenium\\ChromeWebDriver\\chromedriver.exe";
@@ -41,8 +41,8 @@ public class Apache_POI_TC {
 
         System.out.println("Login Successfully, now it is the time to Log Off buddy.");
 
-        //HomePage.lnk_LogOut(driver).click();
-        ExcelUtils.setCellData("Pass", 1, 3);
+        HomePage.lnk_LogOut(driver).click();
+        //ExcelUtils.setCellData("Pass", 1, 3);
         driver.quit();
 
         //This is to send the PASS value to the Excel sheet in the result column.

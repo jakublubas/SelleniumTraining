@@ -38,7 +38,7 @@ public class Log4j_Logging_TC {
         driver.quit();
 
         Log.info("Browser closed");
-        ExcelUtils.setCellData("Pass", 1, 3);
+       // ExcelUtils.setCellData("Pass", 1, 3);
         Log.endTestCase("Selenium_Test_001");
     }
 
