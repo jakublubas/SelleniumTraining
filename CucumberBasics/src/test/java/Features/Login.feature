@@ -1,21 +1,11 @@
 Feature: LoginFeature
   This login feature deals with the login funcionality application
 
-  Scenario: Login with correct username and password
-    Given I navigate to the login page
-    And I enter the user email address as Email:admin
-    And I entered the following for Login
-      | username | password       |
-      | admin    | adminspassword |
-    And I click login button
-    Then I should see the userform page
-
-
   Scenario Outline: Login with correct username and password using Scenario outline
     Given I navigate to the login page
     And I entered <username> and <password>
     And I click login button
-    Then I should see the userform page
+    Then I should see the wrong data message
 
     Examples:
       | username | password    |

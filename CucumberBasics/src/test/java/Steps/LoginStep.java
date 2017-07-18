@@ -6,9 +6,14 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class LoginStep extends BaseUtil {
 
@@ -18,67 +23,60 @@ public class LoginStep extends BaseUtil {
         this.base = base;
     }
 
-    @And("^I click login button$")
-    public void iClickLoginButton() throws Throwable {
-        System.out.println("I click login button");
-    }
-
-    @Given("^I navigate to the login page$")
+        @Given("^I navigate to the login page$")
     public void iNavigateToTheLoginPage() throws Throwable {
+        String exePath = "C:\\Users\\int_jalu.MOBICAPL\\Selenium\\ChromeWebDriver\\chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", exePath);
+        Driver = new ChromeDriver();
+        Driver.navigate().to("http://store.demoqa.com/");
         System.out.println("I navigate to the login page\n");
-        System.out.println(base.stepInfo);
+        Driver.findElement(By.xpath("//*[@id=\"account\"]/a")).click();
+
     }
 
 
-    @Then("^I should see the userform page$")
+        @Then("^I should see the userform page$")
     public void iShouldSeeTheUserformPage() throws Throwable {
+
         System.out.println("I should see the userform page");
-    }
-
-
-    @And("^I entered the following for Login$")
-    public void iEnteredTheFollowingForLogin(DataTable table) throws Throwable {
-
-
-        //List<List<String>> data = table.raw();
-
-/*
-        System.out.println("The value is :"+data.get(0).get(0));
-        System.out.println("The value is :"+data.get(0).get(1));
-        System.out.println("The value is :"+data.get(1).get(0));
-        System.out.println("The value is :"+data.get(1).get(1));*/
-
-        List<User> users = new ArrayList<User>();
-        users = table.asList(User.class);
-
-        for (User user : users) {
-            System.out.println("The Username is " + user.username);
-            System.out.println("The Password is " + user.password);
-        }
+        String title = Driver.getTitle();
+        System.out.println("Page title is: "+title);
 
     }
 
-    @And("^I entered ([^\"]*) and ([^\"]*)$")
+        @And("^I entered ([^\"]*) and ([^\"]*)$")
     public void iEnteredUsernameAndPassword(String userName, String password) throws Throwable {
-        System.out.println("Username is : " + userName);
-        System.out.println("Password is : " + password);
+
+        Driver.findElement(By.id("log")).sendKeys(userName);
+        Driver.findElement(By.id("pwd")).sendKeys(password);
     }
 
-    @And("^I enter the user email address as Email:([^\"]*)$")
-    public void iEnterTheUserEmailAddressAsEmailAdmin(String email) throws Throwable {
+        @And("^I click login button$")
+    public void iClickLoginButton() throws Throwable {
 
-        System.out.println("The email adress is : " + email);
+        Driver.findElement(By.name("submit")).click();
+        Driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
+        System.out.println("I clicked at Login>> button after 3 sec ");}
+
+
+        @Then("^I should see the wrong data message$")
+    public void iShouldSeeTheWrongDataMessage() throws Throwable {
+
+            //String error = Driver.findElement(By.className("response")).toString();
+            long start = System.currentTimeMillis();
+            WebElement error = Driver.findElement(By.xpath("//*[@id=\"ajax_loginform\"]/p[1]"));
+
+
+            if (error.isDisplayed()){
+                System.out.println("Test PASSED");
+                long stop = System.currentTimeMillis();
+                System.out.println("Execute time to show ERROR: "+(stop-start)+"ms\n");}
+            else
+                System.out.println("Test NOT PASSED");
+
+            Driver.quit();
+            }
 
     }
 
-    public class User {
-        public String username;
-        public String password;
-
-        public User(String userName, String passWord) {
-            username = userName;
-            password = passWord;
-        }
-    }
-
-}

@@ -4,6 +4,7 @@ import Base.BaseUtil;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Hooks extends BaseUtil {
 
@@ -15,17 +16,17 @@ public class Hooks extends BaseUtil {
     }
 
     @Before
-    public void InitializeTest(){
-        System.out.println("Opening the browser");
-
-        base.stepInfo = "FirefoxDriver";
+    public void InitializeTest() {
+        String exePath = "C:\\Users\\int_jalu.MOBICAPL\\Selenium\\ChromeWebDriver\\chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", exePath);
+        System.out.println("Opening the browser: CHROME");
 
     }
 
     @After
-    public void TerDownTest(Scenario scenario){
+    public void TerDownTest(Scenario scenario) {
 
-        if (scenario.isFailed()){
+        if (scenario.isFailed()) {
             //Take screenshoot
             System.out.println(scenario.getName());
         }
